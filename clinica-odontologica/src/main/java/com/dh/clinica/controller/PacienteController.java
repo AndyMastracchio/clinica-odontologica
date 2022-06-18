@@ -1,8 +1,8 @@
 package com.dh.clinica.controller;
 
 import com.dh.clinica.model.Paciente;
-import com.dh.clinica.repository.impl.PacienteDaoH2;
 import com.dh.clinica.service.PacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/pacientes")
 public class PacienteController {
 
-    private PacienteService pacienteService = new PacienteService(new PacienteDaoH2());
+    private final PacienteService pacienteService;
+
+    @Autowired
+    public PacienteController(PacienteService pacienteService) {
+        this.pacienteService = pacienteService;
+    }
 
     @PostMapping()
     public ResponseEntity<Paciente> registrarPaciente(@RequestBody Paciente paciente) {

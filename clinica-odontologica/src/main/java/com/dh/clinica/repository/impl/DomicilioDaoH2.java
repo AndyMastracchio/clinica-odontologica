@@ -20,7 +20,6 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
     private final static String DB_USER = "sa";
     private final static String DB_PASSWORD = "";
 
-
     @Override
     public Domicilio guardar(Domicilio domicilio) {
 

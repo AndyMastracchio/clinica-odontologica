@@ -40,7 +40,6 @@ public class TurnoListRepository implements IDao<Turno> {
                 return;
             }
         }
-
         //turnos.removeIf(turno -> turno.getId().equals(id));
     }
 

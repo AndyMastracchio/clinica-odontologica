@@ -23,7 +23,6 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     private final static String DB_USER = "sa";
     private final static String DB_PASSWORD = "";
 
-
     @Override
     public Odontologo guardar(Odontologo odontologo) {
         log.debug("guardando un nuevo odontologo");

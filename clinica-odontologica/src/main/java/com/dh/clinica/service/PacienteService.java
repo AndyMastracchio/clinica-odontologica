@@ -3,14 +3,19 @@ package com.dh.clinica.service;
 
 import com.dh.clinica.model.Paciente;
 import com.dh.clinica.repository.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class PacienteService {
 
     private final IDao<Paciente> pacienteIDao;
 
+    @Autowired
     public PacienteService(IDao<Paciente> pacienteIDao) {
         this.pacienteIDao = pacienteIDao;
     }

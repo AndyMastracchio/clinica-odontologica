@@ -5,12 +5,15 @@ import com.dh.clinica.repository.IDao;
 import com.dh.clinica.model.Domicilio;
 import com.dh.clinica.model.Paciente;
 import com.dh.clinica.util.Util;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class PacienteDaoH2 implements IDao<Paciente>  {
 
     private final static String DB_JDBC_DRIVER = "org.h2.Driver";
@@ -20,8 +23,6 @@ public class PacienteDaoH2 implements IDao<Paciente>  {
     private final static String DB_PASSWORD = "";
 
     private DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
-
-
 
     @Override
     public Paciente guardar(Paciente paciente) {

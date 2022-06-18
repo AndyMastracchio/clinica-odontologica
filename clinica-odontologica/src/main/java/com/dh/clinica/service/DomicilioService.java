@@ -3,14 +3,15 @@ package com.dh.clinica.service;
 
 import com.dh.clinica.model.Domicilio;
 import com.dh.clinica.repository.IDao;
+import com.dh.clinica.repository.impl.DomicilioDaoH2;
 
 import java.util.List;
 
 public class DomicilioService {
     private IDao<Domicilio> domicilioDao;
 
-    public DomicilioService(IDao<Domicilio> domicilioDao) {
-        this.domicilioDao = domicilioDao;
+    public DomicilioService(DomicilioDaoH2 domicilioDaoH2) {
+        this.domicilioDao = domicilioDaoH2;
     }
 
     public Domicilio guardar(Domicilio domicilio) {

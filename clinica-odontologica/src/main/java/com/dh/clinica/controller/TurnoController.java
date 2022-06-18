@@ -25,7 +25,7 @@ import java.util.List;
 public class TurnoController {
 
 
-    private TurnoService turnoService = new TurnoService(new TurnoListRepository());
+    private TurnoService turnoService = new TurnoService();
     private PacienteService pacienteService = new PacienteService(new PacienteDaoH2());
     private OdontologoService odontologoService = new OdontologoService(new OdontologoDaoH2());
 
@@ -38,10 +38,7 @@ public class TurnoController {
         } else {
             response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-
         return response;
-
-
     }
 
     @GetMapping
